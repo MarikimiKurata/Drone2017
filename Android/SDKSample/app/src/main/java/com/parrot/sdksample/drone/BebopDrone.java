@@ -140,7 +140,8 @@ public class BebopDrone {
                 discoveryDevice.dispose();
             }
 
-            try{
+            try
+            {
                 mFtpListManager = new ARUtilsManager();
                 mFtpQueueManager = new ARUtilsManager();
 
@@ -149,15 +150,19 @@ public class BebopDrone {
 
                 mSDCardModule = new SDCardModule(mFtpListManager, mFtpQueueManager);
                 mSDCardModule.addListener(mSDCardModuleListener);
-            }catch (ARUtilsException e){
+            }
+            catch (ARUtilsException e)
+            {
                 Log.e(TAG, "Exception", e);
             }
+
         } else {
             Log.e(TAG, "DeviceService type is not supported by BebopDrone");
         }
     }
 
-    public void dispose() {
+    public void dispose()
+    {
         if (mDeviceController != null)
             mDeviceController.dispose();
         if (mFtpListManager != null)

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -130,7 +129,7 @@ public class BebopActivity extends AppCompatActivity {
         });
 
         mDownloadBt = (Button)findViewById(R.id.downloadBt);
-        mDownloadBt.setEnabled(true);
+        mDownloadBt.setEnabled(false);
         mDownloadBt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mBebopDrone.getLastFlightMedias();
@@ -416,13 +415,6 @@ public class BebopActivity extends AppCompatActivity {
         @Override
         public void onPictureTaken(ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_ENUM error) {
             Log.i(TAG, "Picture has been taken");
-
-            Context context = getApplicationContext();
-            CharSequence text = "Picture has been taken ";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
         }
 
         @Override
