@@ -1,0 +1,233 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BebopActivity"
+    android:id="@+id/piloting_view">
+
+    <com.parrot.sdksample.view.BebopVideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.google.android.gms.samples.vision.face.facetracker.ui.camera.GraphicOverlay
+        android:id="@+id/faceOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/gazDownBt"
+            android:layout_alignRight="@+id/gazDownBt"
+            android:layout_alignTop="@+id/textView2"
+            android:width="50dp"
+            android:drawableLeft="@drawable/right_controller"
+            android:gravity="center_horizontal"
+            android:text="yaw"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginRight="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/rollLeftBt"
+            android:layout_toRightOf="@+id/rollLeftBt"
+            android:width="50dp"
+            android:drawableLeft="@drawable/left_controller"
+            android:gravity="center_horizontal"
+            android:text="roll"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/emergencyBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:width="150dp"
+            android:background="@color/primary"
+            android:text="Emergency"
+            android:textColor="@color/icons"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/takeOffOrLandBt"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <Button
+            android:id="@+id/takeOffOrLandBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:width="150dp"
+            android:background="#56a80622"
+            android:text="Detener"
+            android:textColor="@color/icons"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/takePictureBt"
+        android:src="@drawable/photo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:width="150dp"/>
+
+    <ImageButton
+        android:id="@+id/yawRightBt"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="false"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:text="right" />
+
+    <ImageButton
+        android:id="@+id/rollLeftBt"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:width="50dp"
+        android:background="@android:color/transparent"
+        android:text="left" />
+
+    <ImageButton
+        android:id="@+id/yawLeftBt"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/gazUpBt"
+        android:layout_toLeftOf="@+id/gazUpBt"
+        android:layout_toStartOf="@+id/gazUpBt"
+        android:background="@android:color/transparent"
+        android:text="left" />
+
+    <ImageButton
+        android:id="@+id/rollRightBt"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/backBt"
+        android:layout_toEndOf="@+id/backBt"
+        android:layout_toRightOf="@+id/backBt"
+        android:width="20dp"
+        android:background="@android:color/transparent"
+        android:text="right" />
+
+    <ImageButton
+        android:id="@+id/gazUpBt"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/yawRightBt"
+
+        android:layout_toLeftOf="@+id/yawRightBt"
+        android:layout_toStartOf="@+id/yawRightBt"
+        android:width="110dp"
+        android:background="@android:color/transparent"
+        android:text="up" />
+
+    <ImageButton
+        android:id="@+id/gazDownBt"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/yawRightBt"
+
+        android:layout_toEndOf="@+id/yawLeftBt"
+        android:layout_toRightOf="@+id/yawLeftBt"
+        android:width="110dp"
+        android:background="@android:color/transparent"
+        android:text="down" />
+
+    <ImageButton
+        android:id="@+id/forwardBt"
+        android:layout_width="70dp"
+        android:layout_height="64dp"
+        android:layout_alignTop="@+id/gazUpBt"
+
+        android:layout_toEndOf="@+id/rollLeftBt"
+        android:layout_toRightOf="@+id/rollLeftBt"
+        android:width="110dp"
+        android:background="@android:color/transparent"
+        android:text="forward" />
+
+    <ImageButton
+        android:id="@+id/backBt"
+        android:layout_width="70dp"
+        android:layout_height="64dp"
+        android:layout_below="@+id/rollLeftBt"
+
+        android:layout_toEndOf="@+id/rollLeftBt"
+        android:layout_toRightOf="@+id/rollLeftBt"
+        android:width="110dp"
+        android:background="@android:color/transparent"
+        android:text="back" />
+
+    <Button
+        android:id="@+id/downloadBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:width="150dp"
+        android:background="@color/primary"
+        android:text="Download"
+        android:textColor="@color/icons" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/textView"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="XXX%"
+        android:background="#7c000000"
+        android:id="@+id/batteryLabel"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>
