@@ -36,7 +36,8 @@ public class BebopVideoView extends SurfaceView implements SurfaceHolder.Callbac
     private static final int VIDEO_WIDTH = 640;
     private static final int VIDEO_HEIGHT = 368;
 
-    public BebopVideoView(Context context) {
+    public BebopVideoView(Context context)
+    {
         super(context);
         customInit();
     }
@@ -56,7 +57,8 @@ public class BebopVideoView extends SurfaceView implements SurfaceHolder.Callbac
         getHolder().addCallback(this);
     }
 
-    public void displayFrame(ARFrame frame) {
+    public void displayFrame(ARFrame frame)
+    {
         mReadyLock.lock();
         if ((mMediaCodec != null)) {
             if (mIsCodecConfigured) {
